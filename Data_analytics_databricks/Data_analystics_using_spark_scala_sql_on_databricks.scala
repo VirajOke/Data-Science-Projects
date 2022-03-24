@@ -42,40 +42,36 @@ df2.show(30)
 
 // COMMAND ----------
 
-// MAGIC %sql
-// MAGIC select * from stock_prices_5_csv
+%sql
+select * from stock_prices_5_csv
 
 // COMMAND ----------
 
-
-
-// COMMAND ----------
-
-// MAGIC %sql
-// MAGIC select open,high,low from stock_prices_5_csv
+%sql
+select open,high,low from stock_prices_5_csv
 
 // COMMAND ----------
 
-// MAGIC %sql
-// MAGIC SELECT ticker, avg(close - open) as Avg_return
-// MAGIC FROM stock_prices_5_csv
-// MAGIC group by ticker;
+%sql
+SELECT ticker, avg(close - open) as Avg_return
+stock_prices_5_csv
+group by ticker;
 
 // COMMAND ----------
 
-// MAGIC %sql
-// MAGIC SELECT ticker, avg(close * volume) as most_frequent
-// MAGIC FROM stock_prices_5_csv
-// MAGIC group by ticker;
+%sql
+SELECT ticker, avg(close * volume) as most_frequent
+FROM stock_prices_5_csv
+group by ticker;
 
 // COMMAND ----------
 
-// MAGIC %sql
-// MAGIC SELECT stock_date, ticker, avg(close - open) as Apple_stock_returns
-// MAGIC FROM stocks
-// MAGIC where ticker= 'AAPL'
-// MAGIC AND year(stock_date)= 2015
-// MAGIC group by ticker,stock_date
+%sql
+SELECT stock_date, ticker, avg(close - open) as Apple_stock_returns
+FROM stocks
+where ticker= 'AAPL'
+AND year(stock_date)= 2015
+group by ticker,stock_date
 
 // COMMAND ----------
 
